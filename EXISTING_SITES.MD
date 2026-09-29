@@ -8,7 +8,7 @@ These come from web search summaries. The sites themselves have not been reviewe
 
 | Site | Why it is relevant |
 | --- | --- |
-| [Croft House](https://freshysites.com/web-design-development/top-custom-furniture-websites/) | Short homepage led by polished images. The only text is in the links. |
+| [Croft House](https://crofthouse.com/) | Short homepage led by polished images. The only text is in the links. |
 | [The Joinery](https://freshysites.com/web-design-development/best-woodworking-websites/) | Clean layout with a high-resolution photo of each piece and a short story paragraph. Closest to the provenance idea. |
 | [Parkman Woodworks](https://freshysites.com/web-design-development/best-woodworking-websites/) | Simple, with product images in the spotlight. |
 | [Vorrath Woodworks](https://freshysites.com/web-design-development/best-woodworking-websites/) | Minimal, with large photos and a five-item menu (about, portfolio, capabilities, careers, contact). |
