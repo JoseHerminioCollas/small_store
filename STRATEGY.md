@@ -3,8 +3,9 @@
 A strategy for a small to medium store that sells custom or unique products, such as handmade or made-to-order goods. It starts as a simple informational site and grows into a full e-commerce site later. Project-specific decisions live in a separate file; see [FURNITURE.md](FURNITURE.md).
 
 **Goals**
-1. Phase 1: a simple, fast, informational site with representative products.
-2. Phase 2: grow into a full e-commerce site.
+1. Phase 1: a simple, fast, informational site with a fixed set of example products.
+2. Phase 2: add a CMS so the owner can update content.
+3. Phase 3: grow into a full e-commerce site.
 
 **Constraints**
 - The owner must be able to update content without touching code.
@@ -21,7 +22,7 @@ Use Node.js as build tooling, not as a server. Ship a static site now. Add comme
 - **Astro** (Node-based static site generator)
   - Outputs plain HTML with minimal JavaScript, so it is fast and good for search.
   - Built-in image optimization, which matters when photos are the product.
-  - Content lives in Markdown/JSON. Each product (name, materials, dimensions, photos, story) is one entry, and this structure carries into a phase 2 catalog.
+  - Content lives in Markdown/JSON. Each product (name, materials, dimensions, photos, story) is one entry, and this structure carries into the phase 2 CMS and the phase 3 catalog.
   - Interactive components (React/Svelte) can be added only where needed, such as a cart.
   - i18n routing (for example `/es/...` and `/en/...`) when more than one language is needed.
 
@@ -80,7 +81,7 @@ Recommendation: buy a `.com` as the main domain. If the client wants a local pre
 - **Google Business Profile** is the most valuable free item for a shop with a physical location. It puts the business on Google Maps and in local searches, with photos and reviews.
 - Analytics: Cloudflare Web Analytics or Plausible-style tools are simple and cookie-free (no consent banner). GA4 is free and acceptable if already familiar, but heavier for a non-technical owner.
 
-### Content Editing for the Client
+### Content Editing for the Client (Phase 2)
 The client should not edit JSON by hand. Use a Git-based CMS that writes to the repo through a web form.
 
 | Option | Notes |
@@ -90,6 +91,8 @@ The client should not edit JSON by hand. Use a Git-based CMS that writes to the 
 | Keystatic | Good Astro fit, content stored in repo, free local and GitHub modes. |
 
 Plan about an hour of training for the client.
+
+**Phase 1 skips this.** The site shows a fixed set of example pieces, kept as Markdown/JSON files in the repo and changed by the developer. The CMS is phase 2.
 
 ### Photography
 - Shoot in landscape at high quality.
@@ -125,7 +128,7 @@ For handmade or custom goods, the story is a selling point, so give it real spac
 - Materials and how they are sourced.
 - Any relevant certification. Buyers abroad will ask, and it matters for export later.
 
-## Phase 2: E-commerce
+## Phase 3: E-commerce
 
 Do not build a cart, checkout and payment system from scratch. Options, in rough order of effort:
 
@@ -151,12 +154,12 @@ Prices are approximate and from memory. Verify them at checkout.
 | `.com` renewal | About $15-18/yr, billed yearly, not monthly |
 | Domain privacy and SSL | Free |
 | Hosting (Netlify free tier) | $0. Limits are about 100 GB bandwidth, 300 build minutes and 100 form submissions per month, which is plenty for a small site |
-| Astro, Decap CMS, analytics, Google Business Profile, WhatsApp | $0 |
+| Astro, analytics, Google Business Profile, WhatsApp | $0 |
 | Branded email (optional): Namecheap Private Email | About $1-3 per mailbox per month, billed yearly. The client can start with Gmail. Google Workspace is about $7 per user per month, so skip it unless wanted |
 
 Phase 1 comes to roughly $12 per year with no monthly fees. Free-tier limits can change, but the site is static files, so moving to another free host takes about an hour.
 
-### Phase 2 (rough)
+### Phase 3 (rough)
 - Stripe Payment Links: no monthly fee, about 3-4% plus a fixed fee per sale.
 - Snipcart: about 2% per sale, with a minimum monthly fee of about $20 once sales start.
 - Shopify: about $30-40/month plus payment fees.
@@ -165,15 +168,17 @@ Phase 1 comes to roughly $12 per year with no monthly fees. Free-tier limits can
 ## Recommended Stack Summary
 - Astro, with i18n routing if more than one language is needed
 - Netlify (hosting, forms) on the client's own domain
-- Decap CMS for content editing
+- Phase 2: Decap CMS for content editing
 - WhatsApp button, plus a Netlify form for email inquiries
 - Google Business Profile, plus Cloudflare Analytics or GA4
-- Phase 2: Shopify headless or Snipcart, depending on how much the client wants to manage
+- Phase 3: Shopify headless or Snipcart, depending on how much the client wants to manage
 
 ## Next Steps
 1. Choose the business's domain (see Domain Name) and check whether the client has existing photos.
 2. Scaffold the Astro project with the language structure and a products content collection.
-3. Add the Decap CMS config and placeholder items.
+3. Add placeholder products as content files.
 4. Photograph 6-12 representative products.
 5. Write copy in each language and have it reviewed.
-6. Deploy to Netlify, set up Google Business Profile, and train the client on the CMS.
+6. Deploy to Netlify, set up Google Business Profile, and hand over.
+7. Phase 2: add the Decap CMS config and train the client on it.
+8. Phase 3: choose and add a commerce platform.

@@ -7,15 +7,15 @@ Applies the general approach in [STRATEGY.md](STRATEGY.md) to this client.
 - Furniture workshop and showroom in Peru.
 - Unique pieces made from Peruvian rain forest wood.
 - The showroom is in a town with many English-speaking tourists.
-- The client is not very web savvy, so content updates must work through a simple form.
+- The client is not very web savvy. Phase 1 shows a fixed set of example pieces, so it has no editing interface. Changes go through the developer. The CMS is phase 2 and e-commerce is phase 3.
 
 ## Decisions for This Project
 - **Languages:** Spanish (default) and English. Tourists are a key audience, so a native English speaker reviews the English.
 - **Tagline:** keep "Arte en Madera" in the header. The English pages carry the subtitle "Art in Wood".
-- **Hosting:** Netlify free tier, with Decap CMS for editing.
+- **Hosting:** Netlify free tier. Products are Markdown/JSON files in the repo, edited by the developer. Decap CMS is phase 2 (see STRATEGY.md).
 - **Contact:** WhatsApp button in the header as the primary method, plus a Netlify form for email inquiries.
 - **Visibility:** set up a Google Business Profile for the showroom. It matters most for tourists searching nearby.
-- **Photos:** the developer shoots them. Plan 6-12 representative pieces with 5 photos each (hero, side, detail close-up, back, in-room).
+- **Photos:** the developer shoots them. Plan 6-12 representative pieces with 4 photos each for version 1 (hero, side, detail close-up, back). In-room shots can be added in later updates, and the product fields already allow up to 5 images.
 
 ## Domain
 `sosart.com` is a premium domain on Namecheap, listed at $11,995. Do not buy it.
@@ -40,7 +40,7 @@ Provenance is the main selling point, so give it real space on the About page an
 - Any certification (FSC, or CITES paperwork if applicable). Buyers abroad will ask, and it matters for export later.
 
 ## Product Fields
-Each product entry in the CMS includes:
+Each product entry (a content file in the repo) includes:
 - Name and description in Spanish and English
 - Wood species
 - Dimensions
@@ -48,7 +48,7 @@ Each product entry in the CMS includes:
 - Up to 5 images, each with ES/EN alt text
 - Status: available, sold, or made to order
 
-## Phase 2 Questions Specific to This Client
+## Phase 3 Questions Specific to This Client
 - Most pieces are one-of-a-kind, so inventory is often 1 of 1.
 - Large furniture needs freight quotes rather than flat shipping rates.
 - Sales outside Peru bring customs, export paperwork and currency questions.
@@ -59,4 +59,4 @@ Each product entry in the CMS includes:
 1. Search Namecheap for the candidate domains above, and check whether the client has existing photos.
 2. Scaffold the Astro project with ES/EN structure and a products collection.
 3. Photograph 6-12 pieces and write bilingual copy.
-4. Deploy to Netlify, set up the Google Business Profile, and train the client on the CMS.
+4. Deploy to Netlify and set up the Google Business Profile.
